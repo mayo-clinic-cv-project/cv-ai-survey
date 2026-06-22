@@ -542,12 +542,60 @@ a:hover { text-decoration: underline; }
 }
 
 /* Share section */
+.copy-bar {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.copy-bar-url {
+  flex: 1;
+  padding: 11px 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
+  letter-spacing: 0.01em;
+}
+
+.copy-bar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.copy-bar-btn:hover { background: var(--navy-light); }
+
+.copy-bar-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 .share-row {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 28px;
+  margin-top: 16px;
 }
 
 .share-row .section-label { display: block; }
@@ -651,8 +699,8 @@ a:hover { text-decoration: underline; }
   .trust-row { gap: 12px; }
   .trust-badge { font-size: 0.8rem; padding: 7px 12px; }
 
-  .share-row { flex-direction: column; align-items: center; }
-  .share-row .btn-share { width: 100%; max-width: 300px; justify-content: center; }
+  .share-row { flex-direction: row; }
+  .copy-bar-url { font-size: 0.78rem; padding: 10px 12px; }
 
   .inst-row { flex-direction: column; gap: 12px; }
   .inst-divider { display: none; }

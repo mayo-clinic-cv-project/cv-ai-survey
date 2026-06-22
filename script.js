@@ -2,8 +2,13 @@ const SURVEY_URL = '[INSERT SURVEY LINK]';
 
 document.addEventListener('DOMContentLoaded', function () {
   const pageUrl = window.location.href;
+  const shareText = encodeURIComponent('Help shape the future of AI in healthcare — take this 10-min global clinician survey on computer vision:');
 
-  // Wire up email share with pre-filled subject and body
+  // Populate copy bar URL display
+  const copyBarUrl = document.getElementById('copy-bar-url');
+  if (copyBarUrl) copyBarUrl.textContent = pageUrl;
+
+  // Email
   const emailLink = document.getElementById('email-share');
   if (emailLink) {
     const subject = encodeURIComponent('Survey: Computer Vision AI in Healthcare — Share Your Perspective');
@@ -21,12 +26,35 @@ document.addEventListener('DOMContentLoaded', function () {
     emailLink.setAttribute('href', 'mailto:?subject=' + subject + '&body=' + body);
   }
 
-  // Wire up LinkedIn share
+  // LinkedIn
   const linkedinLink = document.getElementById('linkedin-share');
   if (linkedinLink) {
-    linkedinLink.setAttribute(
-      'href',
+    linkedinLink.setAttribute('href',
       'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(pageUrl)
+    );
+  }
+
+  // X (Twitter)
+  const xLink = document.getElementById('x-share');
+  if (xLink) {
+    xLink.setAttribute('href',
+      'https://x.com/intent/tweet?text=' + shareText + '&url=' + encodeURIComponent(pageUrl)
+    );
+  }
+
+  // Facebook
+  const fbLink = document.getElementById('facebook-share');
+  if (fbLink) {
+    fbLink.setAttribute('href',
+      'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl)
+    );
+  }
+
+  // WhatsApp
+  const waLink = document.getElementById('whatsapp-share');
+  if (waLink) {
+    waLink.setAttribute('href',
+      'https://wa.me/?text=' + shareText + '%20' + encodeURIComponent(pageUrl)
     );
   }
 });
@@ -37,7 +65,6 @@ function copyLink() {
   const label = document.getElementById('copy-label');
 
   if (!navigator.clipboard) {
-    // Fallback for older browsers
     const el = document.createElement('textarea');
     el.value = url;
     el.style.position = 'fixed';
@@ -57,11 +84,9 @@ function copyLink() {
 
 function showCopied(btn, label) {
   label.textContent = 'Copied!';
-  btn.style.borderColor = '#0d9488';
-  btn.style.color = '#0d9488';
+  btn.style.background = '#0d9488';
   setTimeout(function () {
-    label.textContent = 'Copy Link';
-    btn.style.borderColor = '';
-    btn.style.color = '';
+    label.textContent = 'Copy';
+    btn.style.background = '';
   }, 2200);
 }
