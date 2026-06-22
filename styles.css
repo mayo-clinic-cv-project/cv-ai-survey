@@ -545,17 +545,17 @@ a:hover { text-decoration: underline; }
 .copy-bar {
   display: flex;
   align-items: center;
+  gap: 8px;
   background: var(--white);
   border: 1.5px solid var(--gray-200);
   border-radius: var(--radius);
-  overflow: hidden;
+  padding: 6px 6px 6px 16px;
   margin-top: 28px;
   box-shadow: var(--shadow-sm);
 }
 
 .copy-bar-url {
   flex: 1;
-  padding: 11px 16px;
   font-size: 0.85rem;
   color: var(--text-muted);
   white-space: nowrap;
@@ -564,29 +564,35 @@ a:hover { text-decoration: underline; }
   text-align: left;
   font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace;
   letter-spacing: 0.01em;
+  min-width: 0;
 }
 
 .copy-bar-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 18px;
-  background: var(--navy);
+  padding: 8px 16px;
+  background: var(--teal);
   color: var(--white);
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   font-weight: 600;
   border: none;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s;
   flex-shrink: 0;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 4px rgba(13, 148, 136, 0.3);
 }
 
-.copy-bar-btn:hover { background: var(--navy-light); }
+.copy-bar-btn:hover {
+  background: var(--teal-dark);
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.4);
+}
 
 .copy-bar-btn svg {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
 }
 
