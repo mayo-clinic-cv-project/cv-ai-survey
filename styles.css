@@ -440,61 +440,10 @@ a:hover { text-decoration: underline; }
   flex-shrink: 0;
 }
 
-/* Role Cards */
-.role-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin: 32px 0;
-}
-
-.role-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.role-card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
-}
-
-.role-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 16px;
-  background: var(--teal-light);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 11px;
-  color: var(--teal);
-}
-.role-icon svg { width: 100%; height: 100%; }
-
-.role-card h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-
-.role-card p {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.eligibility-note {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-top: 8px;
+.eligibility-body {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.75;
 }
 
 /* Impact section */
@@ -693,11 +642,6 @@ a:hover { text-decoration: underline; }
   .two-col {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-
-  .role-cards {
-    grid-template-columns: 1fr;
-    gap: 16px;
   }
 
   .hero-inner { gap: 20px; }
